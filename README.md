@@ -101,9 +101,9 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes - SSH           | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes (SSH)           | my public IP         |
+| ELK-VM   |  No                 |                      |
+|Load Bal. |  Yes (HTTP)         | my public IP         |
 
 ### Elk Configuration
 
@@ -124,11 +124,15 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines: 
+| Name     | Function | IP Address | 
+|----------|----------|------------|
 | Web-1    |Webserver | 10.0.0.9   |    
 | Web-2    |Webserver | 10.0.0.10  |    
 | Web-3    |Webserver | 10.0.0.13  |   
 
 We have installed the following Beats (Filebeat and Metricbeat) on these machines: 
+| Name     | Function | IP Address | 
+|----------|----------|------------|
 | Web-1    |Webserver | 10.0.0.9   |    
 | Web-2    |Webserver | 10.0.0.10  |    
 | Web-3    |Webserver | 10.0.0.13  |   
