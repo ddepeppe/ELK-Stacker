@@ -46,11 +46,9 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the load balancer machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-
+Only the load balancer machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: 10.0.0.9, 10.0.0.10 and 10.0.0.13.
 
 Machines within the network can only be accessed by the Jump Box (10.0.0.8; 52.188.155.224).
-
 
 A summary of the access policies in place can be found in the table below.
 
@@ -62,7 +60,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it is easy to replicate the conifguration by executing the playbook.  It is also easy to update and reconfigure if needed.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it is easy to replicate the conifguration by executing the playbook on theh same or multiple machines.  It is also easy to update and reconfigure if needed.
 
 The playbook implements the following tasks:
 
@@ -83,12 +81,12 @@ This ELK server is configured to monitor the following machines:
 | Web-2    |Webserver | 10.0.0.10  |    
 | Web-3    |Webserver | 10.0.0.13  |   
 
-We have installed the following Beats on these machines:
+We have installed the following Beats (Filebeat and Metricbeat) on these machines: 
 | Web-1    |Webserver | 10.0.0.9   |    
 | Web-2    |Webserver | 10.0.0.10  |    
 | Web-3    |Webserver | 10.0.0.13  |   
 
-These Beats allow us to collect the following information from each machine. First ELK Stack is three open-source products — Elasticsearch (search engine), Logstash (log aaggregator), and Kibana (visualization tool).  Beats, the forth tool in the stack,  are lightweight agents that are installed on hosts (ex. web-1, web-2, web-3) to collect different types of data for forwarding into the stack. Filebeat collects log data ex. activity logs, sign-in logs and audits logs and sends data to the ELK stack for analysis.  Metricbeat collects machine data ex. uptime, CPU, disk and memory utilizaton and sends to the ELK stack as well for anaylsis. Kibana is then installed on the ELK-VM, 10.2.0.4.
+Beats allow us to collect the following information from each machine and lightweight agents that are installed on hosts (ex. web-1, web-2, web-3) to collect different types of data for forwarding into the stack. Filebeat collects log data ex. activity logs, sign-in logs and audits logs and sends data to the ELK stack for analysis.  Metricbeat collects machine data ex. uptime, CPU, disk and memory utilizaton and sends to the ELK stack as well for anaylsis. Kibana is then installed on the ELK-VM, 10.2.0.4.
 
 This image shows Filebeat and Metricbeat's roles in the stack. https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Azure%20Integration%20Architecture.png
 
@@ -101,7 +99,8 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include the destination machines ex. webservers and elk.
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-Playbooks are YAML files and have the extension .yml.  These files are copied the /etc/ansible and /etc/ansible/roles folders.
+Playbooks are YAML files and have the extension .yml.  These files are copied the /etc/ansible and /etc/ansible/roles folders and are executed with th ecommand ansible-playbook playbookname.yml
+
 
 Playbooks include:
 install-elk.yml
