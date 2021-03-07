@@ -97,17 +97,18 @@ SSH into the control node and follow the steps below:
 - Copy the ansible.cfg file to /etc/ansible.
 - Update the ansible.cfg file to include the remote_user 
 - Update the hosts file to include the destination machines ex. webservers and elk.
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Run the playbook, and navigate to http://40.123.43.190:5601/app/kibana to check the installation wokred as expected.
 
-Playbooks are YAML files and have the extension .yml.  These files are copied the /etc/ansible and /etc/ansible/roles folders and are executed with th ecommand ansible-playbook playbookname.yml
+Playbooks are YAML files and have the extension .yml.  These files are copied the /etc/ansible and /etc/ansible/roles folders and are executed with the command ansible-playbook playbookname.yml
 
 
 Playbooks include:
-install-elk.yml
-filebeat-playbook.yml
-metric-beat.yml
+pentest.yml (setup DVWA hosts)
+install-elk.yml (setup ELk-VM)
+filebeat-playbook.yml (install filebeat on DVWA hosts)
+metricbeat-playbook.yml (install Metricbeat on DVWA hosts)
 
-The hosts file is updated to make Ansible run the playbook on a specific machine. Specify which machine to install the ELK server on versus which to install Filebeat on by using "webservers" or "elk" in the playbook. 
+The "hosts" file is updated to make Ansible run the playbook on a specific machine. Specify which machine to install the ELK server on versus which to install Filebeat on by using "webservers" or "elk" in the playbook. 
  
  HOSTS file: 
 -[webservers]
