@@ -54,7 +54,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
+| Jump Box | Yes - SSH           | 10.0.0.1 10.0.0.2    |
 |          |                     |                      |
 |          |                     |                      |
 
@@ -121,4 +121,18 @@ The "hosts" file is updated to make Ansible run the playbook on a specific machi
 
 
 Use the URL to check that the ELK server is running: http://40.123.43.190:5601/app/kibana
+
+Kibana Investigation Results:
+Filebeat Dashboard
+https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Filebeat%20Dashboard.png
+
+Metricbeat Dashboard
+https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Metricbeat%20Dashboard.png
+
+Investigating 404 Errors:
+https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Kibana%20Log%20of%20404%20Errors.png
+
+Investigationg traffic from specific country:
+https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Kibana%20Unique%20Visitors%20India.png
+
 
