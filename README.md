@@ -112,27 +112,27 @@ The "hosts" file is updated to make Ansible run the playbook on a specific machi
  
  HOSTS file: 
 -[webservers]
-10.0.0.9 ansible_python_interpreter=/usr/bin/python3
-10.0.0.10 ansible_python_interpreter=/usr/bin/python3
-10.0.0.13 ansible_python_interpreter=/usr/bin/python3
+-10.0.0.9 ansible_python_interpreter=/usr/bin/python3
+-10.0.0.10 ansible_python_interpreter=/usr/bin/python3
+-10.0.0.13 ansible_python_interpreter=/usr/bin/python3
 
 [elk]
-10.2.0.4 ansible_python_interpreter=/usr/bin/python3
+-10.2.0.4 ansible_python_interpreter=/usr/bin/python3
 
 
 Use the URL to check that the ELK server is running: http://40.123.43.190:5601/app/kibana
 
 Kibana Investigation Results:
-Filebeat Dashboard
+-Filebeat Dashboard
 https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Filebeat%20Dashboard.png
 
-Metricbeat Dashboard
+-Metricbeat Dashboard
 https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Metricbeat%20Dashboard.png
 
-Investigating 404 Errors:
+-Investigating 404 Errors:
 https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Kibana%20Log%20of%20404%20Errors.png
 
-Investigationg traffic from specific country:
+-Investigationg traffic from specific country:
 https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Kibana%20Unique%20Visitors%20India.png
 
 
