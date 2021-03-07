@@ -25,7 +25,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.  By distributing network traffic accross 
 multiple servers it increases responsivenss and availability of applications and websites.
 
-Load balcing is presented here: https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Load%20Balancer.png
+Load balancing is presented here: https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Load%20Balancer.png
 
 Load balancers protect the network and defend against Denial of Service (DoS) attacks by redirecting traffic.  Using a Jumpbox gives access to a user via a secure and 
 monitored device.  Jump boxes provide a controlled means of access to a device.  
@@ -47,8 +47,7 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the load balancer machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-??
-??
+
 
 Machines within the network can only be accessed by the Jump Box (10.0.0.8; 52.188.155.224).
 
@@ -67,13 +66,13 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 
-      1. Install docker.io
-      2. Install python3-pip
-      3. Install Docker module
-      4. Enble docker service
-      5. Increase virtual memory
-      6. Download and launch a docker elk container
-      
+      1. Specify a  group of machines and remote user
+      2. Increase the memory
+      3. Install docker.io
+      4. Install python3-pip
+      5. Install Docker module
+      6. Enable docker service
+           
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/docker%20ps.png
@@ -89,8 +88,7 @@ We have installed the following Beats on these machines:
 | Web-2    |Webserver | 10.0.0.10  |    
 | Web-3    |Webserver | 10.0.0.13  |   
 
-These Beats allow us to collect the following information from each machine:
-ELK Stack is three open-source products — Elasticsearch (search engine), Logstash (log aaggregator), and Kibana (visualization tool).  Beats, the forth tool in th estack,  are lightweight agents that are installed on hosts to collect different types of data for forwarding into the stack. Filebeat collects log data ex. activity logs, sign-in logs and audits logs and sends data to the ELK stack for analysis.  Metricbeat collects machine data ex. uptime, CPU, disk and memory utilizaton and sends to the ELK stack as well for anaylsis.
+These Beats allow us to collect the following information from each machine. First ELK Stack is three open-source products — Elasticsearch (search engine), Logstash (log aaggregator), and Kibana (visualization tool).  Beats, the forth tool in the stack,  are lightweight agents that are installed on hosts (ex. web-1, web-2, web-3) to collect different types of data for forwarding into the stack. Filebeat collects log data ex. activity logs, sign-in logs and audits logs and sends data to the ELK stack for analysis.  Metricbeat collects machine data ex. uptime, CPU, disk and memory utilizaton and sends to the ELK stack as well for anaylsis. Kibana is then installed on the ELK-VM, 10.2.0.4.
 
 This image shows Filebeat and Metricbeat's roles in the stack. https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Azure%20Integration%20Architecture.png
 
@@ -98,13 +96,29 @@ This image shows Filebeat and Metricbeat's roles in the stack. https://github.co
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
+- Copy the ansible.cfg file to /etc/ansible.
+- Update the ansible.cfg file to include the remote_user 
+- Update the hosts file to include the destination machines ex. webservers and elk.
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+Playbooks are YAML files and have the extension .yml.  These files are copied the /etc/ansible and /etc/ansible/roles folders.
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+Playbooks include:
+install-elk.yml
+filebeat-playbook.yml
+metric-beat.yml
+
+The hosts file is updated to make Ansible run the playbook on a specific machine. Specify which machine to install the ELK server on versus which to install Filebeat on by using "webservers" or "elk" in the playbook. 
+ 
+ HOSTS file: 
+-[webservers]
+10.0.0.9 ansible_python_interpreter=/usr/bin/python3
+10.0.0.10 ansible_python_interpreter=/usr/bin/python3
+10.0.0.13 ansible_python_interpreter=/usr/bin/python3
+
+[elk]
+10.2.0.4 ansible_python_interpreter=/usr/bin/python3
+
+
+Use the URL to check that the ELK server is running: http://40.123.43.190:5601/app/kibana
+
