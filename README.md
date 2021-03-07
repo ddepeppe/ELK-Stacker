@@ -25,7 +25,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.  By distributing network traffic accross 
 multiple servers it increases responsivenss and availability of applications and websites.
 
-           ![alt text](https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/LoadBalancer.png "Load Balancer")
+![alt text](https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/LoadBalancer.png)
 
 Load balancers protect the network and defend against Denial of Service (DoS) attacks by redirecting traffic.  Using a Jumpbox gives access to a user via a secure and 
 monitored device.  Jump boxes provide a controlled means of access to a device.  
@@ -88,7 +88,8 @@ We have installed the following Beats (Filebeat and Metricbeat) on these machine
 
 Beats allow us to collect the following information from each machine and lightweight agents that are installed on hosts (ex. web-1, web-2, web-3) to collect different types of data for forwarding into the stack. Filebeat collects log data ex. activity logs, sign-in logs and audits logs and sends data to the ELK stack for analysis.  Metricbeat collects machine data ex. uptime, CPU, disk and memory utilizaton and sends to the ELK stack as well for anaylsis. Kibana is then installed on the ELK-VM, 10.2.0.4.
 
-This image shows Filebeat and Metricbeat's roles in the stack. ![alt text](https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/AzureIntegrationArchitecture.png)
+This image shows Filebeat and Metricbeat's roles in the stack. 
+![alt text](https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/AzureIntegrationArchitecture.png)
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
