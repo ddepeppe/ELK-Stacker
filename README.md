@@ -25,7 +25,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.  By distributing network traffic accross 
 multiple servers it increases responsivenss and availability of applications and websites.
 
-Load balancing is presented here: ![alt text](https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/LoadBalancer.png "Load Balancer")
+           ![alt text](https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/LoadBalancer.png "Load Balancer")
 
 Load balancers protect the network and defend against Denial of Service (DoS) attacks by redirecting traffic.  Using a Jumpbox gives access to a user via a secure and 
 monitored device.  Jump boxes provide a controlled means of access to a device.  
@@ -73,7 +73,7 @@ The playbook implements the following tasks:
            
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/docker%20ps.png
+![alt text](https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/docker-ps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines: 
