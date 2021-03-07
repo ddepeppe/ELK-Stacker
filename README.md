@@ -185,7 +185,7 @@ Kibana Investigation Results:
 -Investigationg traffic from specific country:
 ![alt text](https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Kibana-Unique-Visitors-India.png)
 
--Webcounts and bytes:
+-Investigate Total Requests and Bytes: 
 ![alt text](https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Kibana.png)
 
 
