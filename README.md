@@ -28,7 +28,7 @@ multiple servers it increases responsivenss and availability of applications and
 https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Load%20Balancer.png
 
 Load balancers protect the network by defending against Denial of Service (DoS) attacks by redirecting traffic.  Using a Jumpbox gives access to a user via a secure and 
-monitor device.  Jump boxes provide a controller means of access to a device.  
+monitored device.  Jump boxes provide a controlled means of access to a device.  
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
