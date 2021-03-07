@@ -4,6 +4,8 @@
 The files in this repository were used to configure the network depicted below.
 
 ![alt text] (https://github.com/ddepeppe/ELK-Stacker/blob/main/Diagrams/Red Team Resource Group with ELK Stack Network.png "Diagram")
+https://github.com/ddepeppe/ELK-Stacker/blob/main/Diagrams/Red-Team-Resource-Group-ELK-Stack.png
+
 
 ELK-Stacker/Diagrams/Red Team Resource Group with ELK Stack Network.png
 
