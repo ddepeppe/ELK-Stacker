@@ -97,7 +97,7 @@ SSH into the control node and follow the steps below:
 - Copy the ansible.cfg file to /etc/ansible.
 - Update the ansible.cfg file to include the remote_user 
 - Update the hosts file to include the destination machines ex. webservers and elk.
-- Run the playbook, and navigate to http://40.123.43.190:5601/app/kibana to check the installation wokred as expected.
+- Run the playbook, and navigate to http://40.123.43.190:5601/app/kibana to check the installation worked as expected.
 
 Playbooks are YAML files and have the extension .yml.  These files are copied the /etc/ansible and /etc/ansible/roles folders and are executed with the command ansible-playbook playbookname.yml
 
