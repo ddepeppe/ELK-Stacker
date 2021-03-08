@@ -158,22 +158,23 @@ SSH into the control node and follow the steps below:
 Playbooks are YAML files and have the extension .yml.  These files are copied the /etc/ansible and /etc/ansible/roles folders and are executed with the command ansible-playbook playbookname.yml
 
 
-Playbooks include:
-pentest.yml (setup DVWA hosts)
-install-elk.yml (setup ELk-VM)
-filebeat-playbook.yml (install filebeat on DVWA hosts)
-metricbeat-playbook.yml (install Metricbeat on DVWA hosts)
+ Playbooks include:
+ pentest.yml (setup DVWA hosts)
+ install-elk.yml (setup ELk-VM)
+ filebeat.yml (install filebeat on DVWA hosts)
+ metricbeat.yml (install Metricbeat on DVWA hosts)
 
 The "hosts" file is updated to make Ansible run the playbook on a specific machine. Specify which machine to install the ELK server on versus which to install Filebeat on by using "webservers" or "elk" in the playbook. 
  
- HOSTS file: 
+ HOSTS file:
+ 
 -[webservers]
-10.0.0.9 ansible_python_interpreter=/usr/bin/python3
-10.0.0.10 ansible_python_interpreter=/usr/bin/python3
-10.0.0.13 ansible_python_interpreter=/usr/bin/python3
+   10.0.0.9 ansible_python_interpreter=/usr/bin/python3
+   10.0.0.10 ansible_python_interpreter=/usr/bin/python3
+   10.0.0.13 ansible_python_interpreter=/usr/bin/python3
 
-[elk]
-10.2.0.4 ansible_python_interpreter=/usr/bin/python3
+-[elk]
+   10.2.0.4 ansible_python_interpreter=/usr/bin/python3
 
 
 Use the URL to check that the ELK server is running: http://40.123.43.190:5601/app/kibana
