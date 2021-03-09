@@ -101,9 +101,9 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-|Jump Box  | Yes (SSH)           | my public IP         |
+|Jump Box  | Yes (SSH)           | my host machine's IP |
 |ELK-VM    | No                  |                      |
-|Load Bal. | Yes (HTTP)          | my public IP         |
+|Load Bal. | Yes (HTTP)          | my host machine's IP |
 |Web-1     | No                  |                      |
 |Web-2     | No                  |                      |
 |Web-3     | No                  |                      |
