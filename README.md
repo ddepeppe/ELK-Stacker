@@ -81,13 +81,15 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.8   |     Linux        |
-| ELK_VM   | Host     | 10.2.0.4   |     Linux        |  
-| Web-1    |Webserver | 10.0.0.9   |     Linux        |
-| Web-2    |Webserver | 10.0.0.10  |     Linux        |
-| Web-3    |Webserver | 10.0.0.13  |     Linux        |
+| Name        | Function          | IP Address                                 | Operating System |
+|-------------|-------------------|--------------------------------------------|------------------|
+| Jump Box    |Gateway            | Public: 52.188.155.224 Private: 10.0.0.8   |     Linux        |
+| ELK_VM      |Monitor/Analytics  | Public: 40.123.43.190 Private: 10.2.0.4    |     Linux        |  
+| Red_Team_LB |Load Balancer      | Public: 52.249.187.242 Private: N/A        |      N/A         | 
+| Web-1       |Web server         | Public: N/A Private: 10.0.0.9              |     Linux        |
+| Web-2       |Web server         | Public: N/A Private:10.0.0.10              |     Linux        |
+| Web-3       |Web server         | Public: N/A Private:10.0.0.13              |     Linux        |
+ 
 
 ### Access Policies
 
@@ -99,14 +101,14 @@ Machines within the network can only be accessed by the Jump Box (10.0.0.8; 52.1
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-|Jump Box  | Yes (SSH)           | my host machine's IP |
-|ELK-VM    | No                  |                      |
-|Load Bal. | Yes (HTTP)          | my host machine's IP |
-|Web-1     | No                  |                      |
-|Web-2     | No                  |                      |
-|Web-3     | No                  |                      |
+| Name        | Publicly Accessible | Allowed IP Addresses |
+|-------------|---------------------|----------------------|
+|Jump Box     | Yes (SSH)           | my host machine's IP |
+|ELK-VM       | Yes (SSH/HTTP)      | my host machine's IP |
+|Red_Team_LB  | Yes (HTTP)          | my host machine's IP |
+|Web-1        | No                  |                      |
+|Web-2        | No                  |                      |
+|Web-3        | No                  |                      |
 
 ### Elk Configuration
 
