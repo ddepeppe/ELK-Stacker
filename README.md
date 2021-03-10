@@ -153,13 +153,12 @@ This image shows Filebeat and Metricbeat's roles in the stack.
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the playbook files to the docker container /etc/ansible.
-- Update the ansible.cfg file to include the remote_user 
-- Update the hosts file to include the destination machines ex. webservers and elk.
-- Run the playbook, and navigate to http://40.123.43.190:5601/app/kibana to check the installation worked as expected.
+- Copy the  4 playbook files to the docker container /etc/ansible folder.
+- Update the ansible.cfg file to include the remote_user "RedAdmin"
+- Update the hosts file to include the IP addresses of the destination machines ex. webservers and elk.
+- Run the playbook, and SSH into ELK-VM, then run docker ps to check the installation worked as expected.
 
 Playbooks are YAML files and have the extension .yml.  These files are copied the /etc/ansible and /etc/ansible/roles folders and are executed with the command ansible-playbook playbookname.yml
-
 
  Playbooks include:
  pentest.yml (setup DVWA hosts)
@@ -167,7 +166,7 @@ Playbooks are YAML files and have the extension .yml.  These files are copied th
  filebeat.yml (install filebeat on DVWA hosts)
  metricbeat.yml (install Metricbeat on DVWA hosts)
 
-The "hosts" file is updated to make Ansible run the playbook on a specific machine. Specify which machine to install the ELK server on versus which to install Filebeat on by using "webservers" or "elk" in the playbook. 
+The "hosts" file is updated to direct Ansible to run the playbook on a specific machine. Specify which machine to install the ELK server on versus which to install Filebeat on by using "webservers" or "elk" in the playbook. 
  
  HOSTS file:
  
