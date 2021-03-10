@@ -153,7 +153,7 @@ This image shows Filebeat and Metricbeat's roles in the stack.
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the ansible.cfg file to /etc/ansible.
+- Copy the playbook files to the docker container /etc/ansible.
 - Update the ansible.cfg file to include the remote_user 
 - Update the hosts file to include the destination machines ex. webservers and elk.
 - Run the playbook, and navigate to http://40.123.43.190:5601/app/kibana to check the installation worked as expected.
