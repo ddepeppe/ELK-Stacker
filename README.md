@@ -161,11 +161,12 @@ SSH into the control node and follow the steps below:
 
 Playbooks are YAML files and have the extension .yml.  These files are copied the /etc/ansible and /etc/ansible/roles folders and are executed with the command ansible-playbook playbookname.yml
 
- Playbooks include:
- pentest.yml (setup DVWA hosts)
- install-elk.yml (setup ELk-VM)
- filebeat.yml (install filebeat on DVWA hosts)
- metricbeat.yml (install Metricbeat on DVWA hosts)
+Playbooks include:
+
+    pentest.yml (setup DVWA hosts)
+    install-elk.yml (setup ELk-VM)
+    filebeat.yml (install filebeat on DVWA hosts)
+    metricbeat.yml (install Metricbeat on DVWA hosts)
 
 The "hosts" file is updated to direct Ansible to run the playbook on a specific machine. Specify which machine to install the ELK server on versus which to install Filebeat on by using "webservers" or "elk" in the playbook. 
  
