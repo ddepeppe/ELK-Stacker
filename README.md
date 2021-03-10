@@ -153,10 +153,11 @@ This image shows Filebeat and Metricbeat's roles in the stack.
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the  4 playbook files to the docker container /etc/ansible folder.
-- Update the ansible.cfg file to include the remote_user "RedAdmin"
-- Update the hosts file to include the IP addresses of the destination machines ex. webservers and elk.
-- Run the playbook, and SSH into ELK-VM, then run docker ps to check the installation worked as expected.
+- Copy the  4 playbook files to the docker container /etc/ansible/roles folder.
+- Copy the ansible.cfg and hosts files to the /etc/ansible folder.
+- Update the ansible.cfg file to include the remote_user set to selected admin name ex. "Admin"
+- Update the hosts file to include the IP addresses of the destination machines in secctions: [webservers] and [elk].
+- Run the playbook file, and SSH into ELK-VM, then run docker ps to confirm the installation worked as expected.
 
 Playbooks are YAML files and have the extension .yml.  These files are copied the /etc/ansible and /etc/ansible/roles folders and are executed with the command ansible-playbook playbookname.yml
 
