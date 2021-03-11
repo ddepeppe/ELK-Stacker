@@ -112,7 +112,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it is easy to replicate the conifguration by executing the playbook on theh same or multiple machines.  It is also easy to update and reconfigure if needed.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it is easy to replicate the configuration by executing the playbook on theh same or multiple machines.  It is also easy to update and reconfigure if needed.
 
 The playbook implements the following tasks:
 
@@ -143,7 +143,7 @@ We have installed the following Beats (Filebeat and Metricbeat) on these machine
 | Web-2    |Webserver | 10.0.0.10  |    
 | Web-3    |Webserver | 10.0.0.13  |   
 
-Beats allow us to collect the following information from each machine and lightweight agents that are installed on hosts (ex. web-1, web-2, web-3) to collect different types of data for forwarding into the stack. Filebeat collects log data ex. activity logs, sign-in logs and audits logs and sends data to the ELK stack for analysis.  Metricbeat collects machine data ex. uptime, CPU, disk and memory utilizaton and sends to the ELK stack as well for anaylsis. Kibana is then installed on the ELK-VM, 10.2.0.4.
+Beats are lightweight agents that are installed on hosts and collect the following information from each machine (ex. Web-1, Web-2, Web-3).  Data is collected and forwarding into the stack. Filebeat collects log data ex. activity logs, sign-in logs and audits logs and sends data to the ELK stack for analysis.  Metricbeat collects machine data ex. uptime, CPU, disk and memory utilizaton and sends to the ELK stack as well for anaylsis. Kibana is installed on the ELK-VM, and access on the 10.2.0.4 using port 5601.
 
 This image shows Filebeat and Metricbeat's roles in the stack.
 
@@ -199,5 +199,13 @@ Kibana Investigation Results:
 
 -Investigate Total Requests and Bytes: 
 ![alt text](https://github.com/ddepeppe/ELK-Stacker/blob/main/Images/Kibana.png)
+
+
+Download the playbook files using the command:
+    
+    curl -OL http://github.com/ddepeppe/ELK-Stacker
+
+
+
 
 
